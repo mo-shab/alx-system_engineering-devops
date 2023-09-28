@@ -1,4 +1,2 @@
 #!/bin/bash
-source_dir=$(pwd)
-target_dir=$(dirname "$source_dir")
-rsync -av --ignore-non-existing --update --include="*.html" "$source_dir/" "$target_dir/"
+find . -name "*.html" -newermt "$(stat -c %y .)" -exec cp {} ../ \;
