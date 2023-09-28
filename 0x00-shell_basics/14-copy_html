@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -name "*.html" -newermt "$(stat -c %y .)" -exec cp {} ../ \;
+cp  -u *.html ..
