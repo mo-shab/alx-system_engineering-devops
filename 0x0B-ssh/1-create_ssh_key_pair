@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Define variables
+KEY_NAME="school"
+BITS=4096
+PASSPHRASE="betty"
+
+# Generate RSA key pair with passphrase
+ssh-keygen -t rsa -b $BITS -N "$PASSPHRASE" -f ~/.ssh/$KEY_NAME
+
