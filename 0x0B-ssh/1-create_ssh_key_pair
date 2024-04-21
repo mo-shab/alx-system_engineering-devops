@@ -3,7 +3,7 @@
 KEY_NAME="school"
 BITS=4096
 PASSPHRASE="betty"
-
+DIRECTORY=$(pwd)
 # Generate RSA key pair with passphrase
-ssh-keygen -t rsa -b $BITS -N "$PASSPHRASE" -f ~/.ssh/$KEY_NAME
+ssh-keygen -t rsa -b $BITS -N "$PASSPHRASE" -f $DIRECTORY/$KEY_NAME
 
