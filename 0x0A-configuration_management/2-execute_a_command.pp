@@ -1,6 +1,6 @@
-# This manifest kill a process called Killmenow
+# kill process killmenow
 
-exec { 'kill_killmenow_process':
-  command     => 'pkill killmenow',
-  refreshonly => true,
+exec { 'pkill':
+  command  => 'pkill killmenow',
+  provider => 'shell',
 }
