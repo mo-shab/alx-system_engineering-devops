@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# to get the Hello Hoberton message, we need to start apache2 server.
+/etc/init.d/apache2 start
