@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Function to get DNS record information
+get_dns_info() {
+    local domain=$1
+    local subdomain=$2
+
+    # Use dig to get DNS information, awk to parse it
+    local dns_info=$(dig +noall +answer ${subdomain}.${domain} | awk '{print $4, $5}')
+
+    # If dns_info is empty, the subdomain does not exist
+    if [ -z "$dns_info" ]; then
+        echo "The subdomain ${subdomain} does not exist."
+    else
+        # Split dns_info into record type and destination
+        local record_type=$(echo $dns_info | cut -d' ' -f1)
+        local destination=$(echo $dns_info | cut -d' ' -f2)
+
+        echo "The subdomain ${subdomain} is a ${record_type} record and points to ${destination}"
+    fi
+}
+
+# Main script logic
+domain=$1
+subdomain=$2
+
+if [ -z "$subdomain" ]; then
+    # If no subdomain is provided, check www, lb-01, web-01, and web-02
+    for sub in www lb-01 web-01 web-02; do
+        get_dns_info $domain $sub
+    done
+else
+    # If a subdomain is provided, check it
+    get_dns_info $domain $subdomain
+fi
