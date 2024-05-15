@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Script that accept one argument and run the whoami command
-# to execute it as the user passed as an argument
 sudo -u $1 whoami
