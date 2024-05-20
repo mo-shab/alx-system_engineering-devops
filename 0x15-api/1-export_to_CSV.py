@@ -19,7 +19,6 @@ def export_cvs(employee_id):
                              todo.get("completed"), todo.get("title")])
 
 
-
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("Usage: python script.py EMPLOYEE_ID")

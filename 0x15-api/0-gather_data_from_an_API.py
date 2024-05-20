@@ -20,7 +20,6 @@ def get_employee_todo_list(employee_id):
         print("\t {}".format(todo.get("title")))
 
 
-
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("Usage: python script.py EMPLOYEE_ID")
