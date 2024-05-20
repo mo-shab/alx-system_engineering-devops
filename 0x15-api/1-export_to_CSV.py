@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Module  to fetch data from an API"""
 
+import csv
 import requests
 import sys
-import csv
 
 
 def export_cvs(employee_id):
