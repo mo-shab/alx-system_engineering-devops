@@ -2,6 +2,7 @@
 """Module that print the title of
 the first 10 hot post"""
 
+
 import requests
 
 
